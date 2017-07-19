@@ -1,4 +1,5 @@
 FROM postgres
+ADD sources.list /etc/apt/sources.list
 RUN apt-get update -y
 RUN apt-get install -y wget
 ARG AMBARI_DDL_URL

@@ -1,4 +1,6 @@
 FROM centos:6
+ADD CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+RUN yum clean all && yum makecache
 ARG AMBARI_REPO_URL
 RUN yum install -y wget sudo net-tools
 RUN wget -nv ${AMBARI_REPO_URL} -O /etc/yum.repos.d/ambari.repo
