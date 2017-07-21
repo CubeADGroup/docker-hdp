@@ -2,7 +2,6 @@ FROM centos:6
 ADD ambari.repo /etc/yum.repos.d/ambari.repo
 ADD CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 RUN yum clean all && yum makecache fast
-ARG AMBARI_REPO_URL
 RUN yum install -y wget sudo net-tools
 RUN yum install -y ambari-server postgresql-jdbc
 RUN wget -O /var/lib/ambari-server/resources/jdk-8u112-linux-x64.tar.gz http://172.17.0.1:8000/jdk-8u112-linux-x64.tar.gz
